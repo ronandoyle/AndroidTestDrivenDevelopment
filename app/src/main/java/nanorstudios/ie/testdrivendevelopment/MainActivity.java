@@ -1,6 +1,7 @@
 package nanorstudios.ie.testdrivendevelopment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.AttributeSet;
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView mTextViewCounter;
     private Button mButtonAdd;
     private Button mButtonSubtract;
+    private Button mButtonJustAnotherActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +28,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTextViewCounter = (TextView) findViewById(R.id.text_view_counter);
         mButtonAdd = (Button) findViewById(R.id.button_add);
         mButtonSubtract = (Button) findViewById(R.id.button_subtract);
+        mButtonJustAnotherActivity = (Button) findViewById(R.id.button_open_another_activity);
 
         mButtonAdd.setOnClickListener(this);
         mButtonSubtract.setOnClickListener(this);
+        mButtonJustAnotherActivity.setOnClickListener(this);
     }
 
     @Override
@@ -44,6 +48,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (view == mButtonSubtract) {
             mCounter.subtractCounter();
             mTextViewCounter.setText(String.valueOf(mCounter.getCount()));
+        } else if (view == mButtonJustAnotherActivity) {
+            startActivity(new Intent(this, JustAnotherActivity.class));
         }
     }
 }

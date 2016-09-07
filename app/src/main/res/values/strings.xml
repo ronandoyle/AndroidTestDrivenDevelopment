@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TestDrivenDevelopment</string>
+    <string name="this_is_just_another_activity">This is just another activity.</string>
+    <string name="subtract">Subtract</string>
+    <string name="add">Add</string>
+    <string name="open_another_activity">Open Another Activity</string>
 </resources>

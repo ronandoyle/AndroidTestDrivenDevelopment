@@ -2,6 +2,7 @@ package nanorstudios.ie.testdrivendevelopment;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
+import android.support.test.espresso.Espresso;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -59,5 +60,14 @@ public class MainActivityInstrumentedTest {
 
         onView(withId(R.id.text_view_counter))
                 .check(matches(withText(String.valueOf(subtractedValue))));
+    }
+
+    @Test
+    public void clickOpenAnotherActivity() {
+        onView(withId(R.id.button_open_another_activity))
+                .perform(click());
+
+        onView(withId(R.id.text_view_message))
+                .check(matches(withText(R.string.this_is_just_another_activity)));
     }
 }
